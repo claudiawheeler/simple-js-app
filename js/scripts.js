@@ -1,2 +1,1 @@
-let myName = 'Claudia';
-document.write(myName);
+alert('Hello world');
