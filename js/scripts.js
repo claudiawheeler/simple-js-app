@@ -1,17 +1,17 @@
 let pokemonList: [
     { 
         name: 'Bulbasaur',
-        type: ['grass'],
+        types: ['grass'],
         height: 2.2
     },
     {
         name: 'Mew',
-        type: ['psychic'],
+        types: ['psychic'],
         height: 0.4
     },
     {
         name: 'Zubat',
-        type: ['poison', 'flying'],
+        types: ['poison', 'flying'],
         height: 0.8
     }
 ]
