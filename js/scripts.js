@@ -8,6 +8,6 @@ let pokemonList = [
 for (let i=0; i < pokemonList.length; i++) {
 // added conditional to check height
     if (pokemonList[i].height > 2) {
-        document.write(pokemonlist[i].name + " (height; " + pokemonList[i].height + " m) - Wow, that's big!" + "<br>")
+        document.write(pokemonList[i].name + " (height; " + pokemonList[i].height + " m) - Wow, that's big!" + "<br>")
     }
 }
