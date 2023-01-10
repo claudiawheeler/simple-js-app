@@ -1,13 +1,17 @@
 // defined pokemonList variable with 3 pokemon in an array
+
 let pokemonList = [
     { name: 'Bulbasaur', types: ['grass'], height: 2.2 },
     { name: 'Mew', types: ['psychic'], height: 0.4 },
     { name: 'Zubat', types: ['poison', 'flying'], height: 0.8 },
 ];
-// created 'for' loop that iterates over each item in pokemonList
-for (let i=0; i < pokemonList.length; i++) {
-// added conditional to check height
-    if (pokemonList[i].height > 2) {
-        document.write(pokemonList[i].name + " (height; " + pokemonList[i].height + " m) - Wow, that's big!" + "<br>")
+
+// replaced 'for' with 'forEach' loop
+
+pokemonList.forEach(function(pokemon) {
+    if (pokemon.height > 2) {
+        document.write(pokemon.name + " (height; " + pokemon.height + " m) - Wow, that's big!" + "<br>")
+    } else {
+        document.write(pokemon.name + " (height; " + pokemon.height + ")" + "<br>")
     }
-}
+});
