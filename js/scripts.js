@@ -1,32 +1,46 @@
 //wrapped array in IIFE
 
-let pokemonRepository = (function () {
-    let pokemonList = [
+var pokemonRepository = (function () {
+    let repository = [
         { name: 'Bulbasaur', types: ['grass'], height: 2.2 },
         { name: 'Mew', types: ['psychic'], height: 0.4 },
         { name: 'Zubat', types: ['poison', 'flying'], height: 0.8 },
+        { name: 'Pikachu', types: ['electric'], height: 0.3 },
     ];
 
-    function getAll () {
-        return pokemonList;
+    function add(pokemon) {
+        if (
+            typeof pokemon === "object" &&
+            "name" in pokemon &&
+            "types" in pokemon &&
+            "height" in pokemon
+        ) {
+            repository.push(pokemon);
+        } else {
+            console.log("pokemon is not correct");
+        }
     }
-    function add (pokemon) {
-    pokemonList.push(pokemon);
+    function getAll () {
+        return repository;
+    }
+    function addListItem(pokemon){
+    let pokemonList = document.querySelector(".pokemon-list");
+    let listpokemon = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("button-class");
+    listpokemon.appendChild(button);
+    pokemonList.appendChild(listpokemon);
     }
     return {
         getAll: getAll,
-        add: add
-    }
-})()
+        add: add,
+        addListItem: addListItem
+    };
+})();
 
-console.log(pokemonRepository.getAll())
-
-// replaced 'for' with 'forEach' loop
+console.log(pokemonRepository.getAll());
 
 pokemonRepository.getAll().forEach(function(pokemon) {
-    if (pokemon.height > 2) {
-        document.write(pokemon.name + " (height; " + pokemon.height + " m) - Wow, that's big!" + "<br>")
-    } else {
-        document.write(pokemon.name + " (height; " + pokemon.height + ")" + "<br>")
-    }
+    pokemonRepository.addListItem(pokemon);
 });
