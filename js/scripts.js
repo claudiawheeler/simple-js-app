@@ -85,6 +85,13 @@ let pokemonRepository = (function () {
             let contentElement = document.createElement ('p');
             contentElement.innerText =('Height: ' + item.height + '\n' +  '\n' + 'Types: ' + item.types);
 
+            let types='';
+            item.types.forEach((type) => {
+              types = types + type.type.name + ','
+              })
+              
+              contentElement.innerText =('Height: ' + item.height + '\n' + '\n' + 'Types: ' + types);
+
 
             modal.appendChild (closeButtonElement);
             modal.appendChild (titleElement);
