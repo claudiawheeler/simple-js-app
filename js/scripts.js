@@ -49,7 +49,7 @@ let pokemonRepository = (function () {
         item.imageUrl = details.sprites.front_default;
         item.height = details.height;
         item.types = details.types.map((type) => type.type.name);
-        item.abilities = details.abilities.map((abilities) => abilities.abilities.name);
+        item.abilities = details.abilities.map((abilities) => abilities.ability.name);
       }).catch(function (e) {
         console.error(e);
       });
