@@ -54,7 +54,7 @@ let pokemonRepository = (function () {
         console.error(e);
       });
     }
-    function showDetailsModal(pokemon) {
+    function showDetails(pokemon) {
       loadDetails(pokemon).then(function () {
         showDetailsModal(pokemon);
       });
