@@ -11,9 +11,25 @@
     </head>
     <body>
         <!-- Nav Bar -->
-        <nav class="navbar navbar-dark bg-primary">
-            <a class="navbar-brand" href="#">Pokedex</a>
-        </nav>
+        <header class="container">
+            <nav>
+                <div class="container-fluid">
+                    <a class="navbar-brand">Pokedex</a>
+                </div>
+                <div class="container-fluid">
+                    <form class="d-flex" role="search">
+                        <input 
+                        class="form-control me-2"
+                        type="search"
+                        placeholder="Pikachu"
+                        aria-label="Search" />
+                        <button class="btn btn-outline-success search-btn" type="submit">
+                            Search
+                        </button>
+                    </form>
+                </div>
+            </nav>
+        </header>
         <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
     Launch demo modal
